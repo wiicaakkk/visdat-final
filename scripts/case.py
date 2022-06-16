@@ -59,7 +59,7 @@ def script_case(cv19):
   origin_select = Select(title='Country', value='Afghanistan', options = origins)
   origin_select.on_change('value', update)
 
-  range_select = DateRangeSlider(start=datetime(2021, 1, 1), end=datetime(2021, 12, 31), value=(datetime(2021,1,1), datetime(2021,1,31)), title='Date')
+  range_select = DateRangeSlider(start=datetime(2022, 1, 1), end=datetime(2022, 12, 31), value=(datetime(2022,1,1), datetime(2022,1,31)), title='Date')
   range_select.on_change('value', update)
 
 
