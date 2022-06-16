@@ -8,7 +8,7 @@ from bokeh.models.widgets import Tabs, Panel, CheckboxGroup, Select
 from bokeh.palettes import Category20_16
 from datetime import datetime
 
-def lineline(cv19):
+def script_case(cv19):
   def make_dataset(country, date_range):
     yr = date_range
     subset = cv19[cv19['location'] == country]
