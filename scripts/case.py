@@ -52,7 +52,6 @@ def script_case(covid):
     renj = list(renj)
     new_src = make_dataset(origin, renj)
     src.data.update(new_src.data)
-    p.title.text=f'New Cases on {origin}'
 
   origins = list(set(covid['location']))
   origins.sort()
