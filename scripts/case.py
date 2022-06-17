@@ -18,7 +18,7 @@ def script_case(covid):
     return new_src
 
   def make_plot(src, origin):
-    p = figure(plot_width = 800, plot_height = 600,
+    p = figure(plot_width = 1000, plot_height = 400,
                x_axis_label='Date', x_axis_type='datetime', y_axis_label='Cases', title=f'Daily New Cases on {origin}')
     p.line('date', 'new_cases', source=src, color='firebrick', line_width=1)
 
@@ -32,9 +32,9 @@ def script_case(covid):
 
 
 		# Axis titles
-    p.xaxis.axis_label_text_font_size = '14pt'
+    p.xaxis.axis_label_text_font_size = '12pt'
     p.xaxis.axis_label_text_font_style = 'bold'
-    p.yaxis.axis_label_text_font_size = '14pt'
+    p.yaxis.axis_label_text_font_size = '12pt'
     p.yaxis.axis_label_text_font_style = 'bold'
     p.xgrid.grid_line_color = None
 
@@ -52,11 +52,11 @@ def script_case(covid):
     renj = list(renj)
     new_src = make_dataset(origin, renj)
     src.data.update(new_src.data)
-    p.title.text=f'Daily New Cases on {origin}'
+    p.title.text=f'New Cases on {origin}'
 
   origins = list(set(covid['location']))
   origins.sort()
-  origin_select = Select(title='Country', value='Afghanistan', options = origins)
+  origin_select = Select(title='Country', value='Indonesia', options = origins)
   origin_select.on_change('value', update)
 
   range_select = DateRangeSlider(start=datetime(2022, 1, 1), end=datetime(2022, 12, 31), value=(datetime(2022,1,1), datetime(2022,1,31)), title='Date')
