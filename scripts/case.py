@@ -22,7 +22,7 @@ def script_case(covid):
                x_axis_label='Date', x_axis_type='datetime', y_axis_label='Cases', title=f'Daily New Cases on {origin}')
     p.line('date', 'new_cases', source=src, color='firebrick', line_width=1)
 
-    hover = HoverTool(tooltips=[('Country', '@location'), ('New cases', '@new_cases'), ('@date{%Y-%m-%d}')], formatters={'@date' :'datetime'},  line_policy='next')
+    hover = HoverTool(tooltips=[('Country', '@location'), ('New cases', '@new_cases'), ('Date', '@date{%Y-%m-%d}')], formatters={'@date' :'datetime'},  line_policy='next')
     p.add_tools(hover)
     return p
   

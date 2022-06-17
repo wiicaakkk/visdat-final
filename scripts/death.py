@@ -59,7 +59,7 @@ def script_death(covid):
   origin_select = Select(title='Country', value='Indonesia', options = origins)
   origin_select.on_change('value', update)
 
-  range_select = DateRangeSlider(start=datetime(2022, 1, 1), end=datetime(2022, 12, 31), value=(datetime(2022,1,1), datetime(2022,1,31)))
+  range_select = DateRangeSlider(start=datetime(2022, 1, 1), end=datetime(2022, 12, 31), value=(datetime(2022,1,1), datetime(2022,1,31)), title='Date')
   range_select.on_change('value', update)
 
   initial_range = range_select.value_as_datetime
