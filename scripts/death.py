@@ -8,10 +8,10 @@ from bokeh.models.widgets import Tabs, Panel, CheckboxGroup, Select
 from bokeh.palettes import Category20_16
 from datetime import datetime
 
-def script_death(cv19):
+def script_death(covid):
   def make_dataset(country, date_range):
     yr = date_range
-    subset = cv19[cv19['location'] == country]
+    subset = covid[covid['location'] == country]
     subset = subset[(subset['date'] >= yr[0]) & (subset['date'] <= yr[1])]
 
 
@@ -55,7 +55,7 @@ def script_death(cv19):
     src.data.update(new_src.data)
     p.title.text=f'Daily New Cases on {origin}'
 
-  origins = list(set(cv19['location']))
+  origins = list(set(covid['location']))
   origins.sort()
   origin_select = Select(title='Country', value='Afghanistan', options = origins)
   origin_select.on_change('value', update)
