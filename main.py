@@ -17,6 +17,4 @@ tab2 = script_case(df_use)
 
 tabs = Tabs(tabs = [tab1, tab2])
 
-curdoc().add_root(tab)
-curdoc().title = "worldwide covid in 2022 "
-show(curdoc)
+curdoc().add_root(tabs)
